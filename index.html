@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="contact-form-container">
         <h1>Contact Us</h1>
-        <form action="send_mail.php" method="POST" class="contact-form">
+        <form id="contactForm" class="contact-form">
             <div class="input-field">
-                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
             </div>
             <div class="input-field">
-                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
             </div>
             <div class="input-field">
-                <textarea name="message" placeholder="Your Message" required></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="submit-btn">Send</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            fetch('/api/sendmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Message sent successfully!');
+                document.getElementById('contactForm').reset();
+            })
+            .catch(error => {
+                alert('Failed to send message.');
+            });
+        });
+    </script>
 </body>
 </html>
-<form action="/api/sendmail" method="POST" class="contact-form">
-    <div class="input-field">
-        <input type="text" name="name" placeholder="Your Name" required>
-    </div>
-    <div class="input-field">
-        <input type="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div class="input-field">
-        <textarea name="message" placeholder="Your Message" required></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Send</button>
-</form>

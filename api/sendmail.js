@@ -1,4 +1,3 @@
-// api/sendmail.js
 const nodemailer = require("nodemailer");
 
 module.exports = async (req, res) => {
@@ -9,14 +8,14 @@ module.exports = async (req, res) => {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'your_email@gmail.com', // Твой email
+                user: 'your_email@gmail.com', // Замените на ваш email
                 pass: 'your_email_password',   // Пароль или приложение для доступа
             },
         });
 
         const mailOptions = {
             from: email,
-            to: "your_email@example.com", // Твой email, куда будут приходить письма
+            to: "your_email@example.com", // Замените на ваш email
             subject: "New Contact Form Submission",
             html: `
                 <h2>New Message</h2>
