@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Настройки email
-    $to = "your_email@example.com"; // Замените на ваш email
+    $to = "contactformodwillio0702@gmail.com"; // Замените на ваш email
     $subject = "New Contact Form Submission";
     $body = "
         <h2>New Message</h2>
