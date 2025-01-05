@@ -9,6 +9,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .form-container {
@@ -17,14 +26,17 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
+    animation: slideIn 0.5s ease-in-out;
 }
 
 h1 {
     color: #feca57;
     margin-bottom: 20px;
     font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .input-group {
@@ -67,4 +79,16 @@ textarea {
 .submit-btn:hover {
     transform: scale(1.05);
     background: #ffc312;
+}
+
+/* Анимации */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
