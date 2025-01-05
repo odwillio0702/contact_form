@@ -24,3 +24,15 @@
     </div>
 </body>
 </html>
+<form action="/api/sendmail" method="POST" class="contact-form">
+    <div class="input-field">
+        <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="input-field">
+        <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="input-field">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send</button>
+</form>
