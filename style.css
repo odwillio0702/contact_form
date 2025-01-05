@@ -1,17 +1,21 @@
-/* Основной стиль */
-body {
+/* Общие стили */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Arial', sans-serif;
-    background: #121212;
-    color: #fff;
+    background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    color: #fff;
 }
 
+/* Контейнер формы */
 .contact-form {
     display: flex;
     justify-content: center;
@@ -21,34 +25,36 @@ body {
 }
 
 .form-container {
-    background: #1e1e1e;
-    padding: 30px;
+    background-color: #1e1e1e;
+    padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 500px;
-    text-align: center;
     animation: slideIn 0.5s ease-in-out;
 }
 
+/* Заголовок */
 h1 {
     color: #feca57;
-    margin-bottom: 20px;
-    font-size: 24px;
+    margin-bottom: 25px;
+    font-size: 26px;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+/* Стили для полей ввода */
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 input, textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #444;
+    padding: 15px;
     border-radius: 10px;
-    background: #2a2a2a;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
     color: #fff;
     font-size: 16px;
     outline: none;
@@ -60,25 +66,22 @@ input:focus, textarea:focus {
     box-shadow: 0 0 8px #feca57;
 }
 
-textarea {
-    resize: none;
-    height: 100px;
-}
-
+/* Стили для кнопки */
 .submit-btn {
-    background: #feca57;
+    background-color: #feca57;
     border: none;
-    padding: 12px 20px;
+    padding: 15px 25px;
     border-radius: 10px;
     font-size: 16px;
     color: #121212;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    width: 100%;
 }
 
 .submit-btn:hover {
     transform: scale(1.05);
-    background: #ffc312;
+    background-color: #ffc312;
 }
 
 /* Анимации */
