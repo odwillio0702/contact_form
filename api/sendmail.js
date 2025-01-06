@@ -4,18 +4,18 @@ module.exports = async (req, res) => {
     if (req.method === "POST") {
         const { name, email, message } = req.body;
 
-        // Настроим транспортер для отправки почты через Gmail
+      
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: process.env.MAIL_USER,  // Используем переменную окружения для email
-                pass: process.env.MAIL_PASS,  // Используем переменную окружения для пароля приложения
+                user: process.env.MAIL_USER,  
+                pass: process.env.MAIL_PASS,
             },
         });
 
         const mailOptions = {
             from: email,
-            to: process.env.MAIL_TO,  // Адрес, куда отправляются письма
+            to: process.env.MAIL_TO,  
             subject: "New Contact Form Submission",
             html: `
                 <h2>New Message</h2>
